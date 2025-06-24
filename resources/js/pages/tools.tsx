@@ -1,4 +1,4 @@
-import { Link } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import { useState, useCallback, useRef } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -79,6 +79,7 @@ function Tools() {
 
 return (
 <>
+    <Head title="Tools and Portfolio +" />
     <nav className="navbar bg-body-tertiary bg-gradient shadow sticky-top">
         <div className="container-fluid">
             <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir Navegação">
@@ -99,7 +100,7 @@ return (
             <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul className="navbar-nav my-3 hstack gap-5 d-block d-md-flex">
                     <li className="nav-item">
-                    <Link className="nav-link" href={route('portfolio')}>
+                    <Link className="nav-link" href={route('introduction')}>
                         Taukane
                     </Link>
                     </li>
@@ -109,9 +110,9 @@ return (
                     </Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link" href={route('portfolio')}>
-                        Portfolio +
-                    </Link>
+                    <span className="nav-link text-amber-300">
+                        Tools / Portfolio +
+                    </span>
                     </li>
                 </ul>
             </div>

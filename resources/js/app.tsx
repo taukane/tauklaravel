@@ -6,7 +6,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot } from 'react-dom/client';
 import { initializeTheme } from './hooks/use-appearance';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Tauk Laravel';
+const appName = import.meta.env.VITE_APP_NAME || 'Tauk / Laravel Parquinho';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
@@ -17,7 +17,7 @@ createInertiaApp({
         root.render(<App {...props} />);
     },
     progress: {
-        color: '#4B5563',
+        color: '#4e758d',
     },
 });
 
