@@ -1,6 +1,5 @@
-import { Link } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import { useState, useCallback, useRef } from 'react'
-
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Keyboard, Pagination, Navigation, Thumbs, HashNavigation } from 'swiper/modules';
@@ -101,6 +100,7 @@ export default function Portfolio() {
 
 return (
     <>
+        <Head title="Portfolio" />
         <nav className="navbar bg-body-tertiary bg-gradient shadow sticky-top">
             <div className="container-fluid">
                 <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir Navegação">
@@ -121,18 +121,18 @@ return (
                 <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul className="navbar-nav my-3 hstack gap-5 d-block d-md-flex">
                         <li className="nav-item">
-                        <Link className="nav-link" href={route('contact')}>
+                        <Link className="nav-link" href={route('introduction')}>
                             Taukane
                         </Link>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link" href={route('contact')}>
+                        <span className="nav-link active" onClick={() => handleThumbClick(0)}>
                             Portfolio
-                        </Link>
+                        </span>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link" href={route('contact')}>
-                            Portfolio +
+                        <Link className="nav-link" href={route('tools')}>
+                            Tools / Portfolio +
                         </Link>
                         </li>
                     </ul>
@@ -147,13 +147,15 @@ return (
             <div className="container">
                 <div className="row">
                     <div className="col-8 mx-auto lh-lg">
-                        Experiência sólida em desenvolvimento web front-end, concepção da arquitetura da informação e wireframes até a implementação de interfaces UX/UI centradas no usuário.
+                        <h2 className='h5'>Desde 2002 desenvolvo Interfaces de Design <b>Web</b> e <b>Gráfico.</b></h2>
                         <hr/>
-                        <h3>Conhecimento em metodologias ágeis, versionamento de código com Git e implementação de boas práticas de desenvolvimento.</h3>
+                        <p className='h5'>Experiência sólida em desenvolvimento web front-end, concepção da arquitetura da informação e wireframes até a implementação de interfaces UX/UI centradas no usuário.</p>
                         <hr/>
-                        <h4>Habilidades em design responsivo, otimização de performance, acessibilidade web e SEO.</h4>
+                        <h3 className='h5'>Conhecimento em metodologias ágeis, versionamento de código com Git e implementação de boas práticas de desenvolvimento.</h3>
                         <hr/>
-                        <h4>Criação de identidades visuais para marcas e embalagens até a arte final para impressão.</h4>
+                        <h4 className='h5'>Habilidades em design responsivo, otimização de performance, acessibilidade web e SEO.</h4>
+                        <hr/>
+                        <h4 className='h5'>Criação de identidades visuais para marcas e embalagens até a arte final para impressão.</h4>
                         <hr/>
                     </div>
                 </div>
@@ -238,7 +240,7 @@ return (
             id={`portfolio-${panel.id}`}>
             <h5 className="mt-5 pt-4 fw-bold text-amber-400">{panel.name}</h5>
             <div>{panel.descricao}</div>
-            {panel.src && panel.src.length > 0 ? (
+            {panel.src ? (
                 <Swiper
                     spaceBetween={40}
                     slidesPerView={1}
